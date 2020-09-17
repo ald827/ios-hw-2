@@ -1,7 +1,18 @@
 
 import UIKit
 
-
+func BMI (hight: Double , wieght: Double) {
+    let BMI = wieght / hight*hight
+    if BMI < 18 {
+        print("ضعيف")
+    } else if BMI < 30 {
+        print("وزن طبيعي")
+    } else if BMI <  40 {
+        print("سمنة خفيفه")
+    } else {
+       print("سمنة مفرطه")
+    }
+}
 
 //: # 1️⃣ السؤال الاول
 /*:
@@ -36,7 +47,18 @@ import UIKit
 
 
 //: # 2️⃣  السؤال الثاني
+var myName = "Deemah Aldaihane"
+var myAge = 17
 
+func license (name: String , age: Int) {
+    if age < 18 {
+       print("age isnt valid")
+    }
+    else {
+        print("age is valid")
+    }
+}
+license(name: myName, age: myAge)
 /*:
   ## سوف تقوم بعمل دالة تقوم بالكشف اذا كان المُتقدم يستحق رخصة القيادة أم لا.
 ##
