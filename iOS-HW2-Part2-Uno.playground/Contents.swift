@@ -13,8 +13,7 @@
 
 
 //: ![Uno Deck](deck.jpg)
-
-
+ 
 /*:
  ### المطلوب:
 #### الجزء الأول:
@@ -85,21 +84,36 @@ var wild_Draw = UIImage(named: "Wild_Draw.png")
 
 
 
-/// قم بإنشاء الستركت هنا
+ 
 
-// struct ...
+ 
+ struct Card{
+    var color: String?
+    var number: Int?
+    var action: String?
+    func imageName() -> String{
+        if number != nil {
+return "\(color!)_\(number!).png"
+        }else {
+           return "\(color!)_\(action!).png"
+        }
+    }
+ }
+ var Cards:[Card] = []
+ let colors = ["Blue", "Yellow", "Red", "Green"]
+ for color in colors{
+    Cards.append(Card(color: color,number: 0))
+    for _ in 1...2{
+        for i in 1...9{
+            Cards.append(Card(color: color, number: i))
+        }
+    }
+ }
 
-
-
-
-
-// لا تقم بإزالة الملاحظات إلا عند وصولك للمطلوب الثالث
-
-//
-//let randomCard = cards.randomElement()!
-//let randomCardImage = UIImage(named: randomCard.imageName())
-//
-//
-//let cardImages = cards.map{UIImage(named: $0.imageName())}
-//randomCardImage
-//cardImages
+ let randomCard = Cards.randomElement()!
+ let randomCardImage = UIImage(named: randomCard.imageName())
+ 
+ 
+ let cardImages = Cards.map{UIImage(named:$0.imageName())}
+randomCardImage
+cardImages
