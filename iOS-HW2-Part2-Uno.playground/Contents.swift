@@ -102,8 +102,14 @@ return "\(color!)_\(number!).png"
  var Cards:[Card] = []
  let colors = ["Blue", "Yellow", "Red", "Green"]
  for color in colors{
-    Cards.append(Card(color: color,number: 0))
+    for i in  0...9{
+        Cards.append(Card(color: color,number: i))
+    }
     for _ in 1...2{
+        let actions = ["Draw", "Reverse", "Skip"]
+            for action in actions{
+        Cards.append(Card(color: color,action: action))
+            }
         for i in 1...9{
             Cards.append(Card(color: color, number: i))
         }
